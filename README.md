@@ -1,10 +1,11 @@
 # scalez-challenge
 scalez challenge - closest vector
 
-***
 for console app
+***
 run (on linux): sh console.sh
 
+for web app
 ***
 run (on linux) : sh run.sh and then run in another browser
 
