@@ -1,5 +1,5 @@
 import unittest
-from closest_vector_cached import ClosestVectorFinder, ClosestVectorFinderCached
+from closest_vector_cached import ClosestVectorFinder, ClosestVectorFinderCached, ClosedVectorKDtree
 
 
 def build(vectors):
@@ -9,6 +9,15 @@ def build(vectors):
 
 
 class TestClosestVector(unittest.TestCase):
+    # def test_kdd_implementation(self):
+    #     run_tests()
+
+    def test_kdd(self):
+        closest_finder = ClosedVectorKDtree([[1, 0, 1, 0], [0, 1, 1, 0], [0, 1, 0, 1]])
+        closest_finder.build()
+        closest_vector = closest_finder.query([0, 0, 0, 1])
+        self.assertEqual(closest_vector, [0, 1, 0, 1])
+
     def test_fact(self):
         closest_finder = ClosestVectorFinder([[1, 0, 1, 0], [0, 1, 1, 0], [0, 1, 0, 1]])
         closest_finder.build()
